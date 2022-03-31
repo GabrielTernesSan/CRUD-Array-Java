@@ -95,7 +95,7 @@ public class Program {
 			// ------------------------------------------------------------------------------------------------------
 			else if (opcao == 3) {
 				sc.nextLine();
-				int index = 500;
+				int index = 0;
 				System.out.print("Nome: ");
 				nome = sc.nextLine();
 
@@ -106,11 +106,18 @@ public class Program {
 						index = cadastrados.indexOf(pessoa);
 					}
 				}
+				
+				System.out.print("Nome atualizado: ");
+				nome = sc.nextLine();
 				System.out.print("Telefone atualizado: ");
 				telefone = sc.next();
+				System.out.println("Data de Nascimento atualizada: ");
+				nascimento = sc.next();
 				System.out.print("Data de hoje: ");
 				ultimaAlteracao = sc.next();
 
+				cadastrados.get(index).setNome(nome);
+				cadastrados.get(index).setNascimento(nascimento);
 				cadastrados.get(index).setTelefone(telefone);
 				cadastrados.get(index).setUltimaAlteracao(ultimaAlteracao);
 			}
